@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>迪迪的世界 DIDI's World</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { cream: "#FFF7EA", paw: "#FDE1A0", apricot: "#F5B88E", cocoa: "#6B4226", latte: "#8B5E34", meadow: "#C3D8B0", blush: "#F7C9C0" }, fontFamily: { display: ["Fredoka", "sans-serif"], body: ["Noto Sans TC", "sans-serif"] }, borderRadius: { "4xl": "2rem" } } } };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; } body { font-family: "Noto Sans TC", sans-serif; } .font-display { font-family: "Fredoka", "Noto Sans TC", sans-serif; }
+    .paw-trail { display:flex; align-items:center; justify-content:center; gap:1rem; color:#F5B88E; } .paw-trail::before,.paw-trail::after { content:""; height:2px; width:5rem; background:#FDE1A0; }
+    .polaroid { background:#fff; padding:.75rem .75rem 1.75rem; box-shadow:0 12px 30px rgba(107,66,38,.12); transform:rotate(var(--rotate, 0deg)); }
+    .flip-card { perspective:1000px; min-height:220px; cursor:pointer; } .flip-card-inner { position:relative; width:100%; height:100%; min-height:220px; transition:transform .7s; transform-style:preserve-3d; } .flip-card.is-flipped .flip-card-inner { transform:rotateY(180deg); } .flip-face { position:absolute; inset:0; backface-visibility:hidden; } .flip-back { transform:rotateY(180deg); }
+    .guest-note { animation:pop-in .35s ease-out; } @keyframes pop-in { from { opacity:0; transform:scale(.9) rotate(-2deg); } to { opacity:1; transform:scale(1) rotate(0); } }
+  </style>
+</head>
+<body class="bg-cream text-cocoa">
+  <header class="sticky top-0 z-50 border-b border-paw/70 bg-cream/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"><a href="#home" class="font-display text-xl font-bold text-latte">DIDI's World</a><button id="menuButton" class="rounded-xl border border-paw px-3 py-2 md:hidden" aria-label="開啟選單">選單</button><div id="navLinks" class="hidden items-center gap-6 text-sm font-bold md:flex"><a href="#about">關於迪迪</a><a href="#gallery">生活相簿</a><a href="#facts">迪迪小檔案</a><a href="#guestbook">留言給迪迪</a></div></nav>
+    <div id="mobileMenu" class="hidden border-t border-paw px-5 pb-4 md:hidden"><div class="flex flex-col gap-3 pt-3 font-bold"><a href="#about">關於迪迪</a><a href="#gallery">生活相簿</a><a href="#facts">迪迪小檔案</a><a href="#guestbook">留言給迪迪</a></div></div>
+  </header>
+  <main>
+    <section id="home" class="relative overflow-hidden px-5 py-16 md:py-24"><div class="absolute -left-24 top-10 h-56 w-56 rounded-full bg-paw/45 blur-3xl"></div><div class="absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-blush/45 blur-3xl"></div><div class="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2"><div><p class="font-display text-lg font-semibold text-latte">汪！歡迎來到我的小宇宙</p><h1 class="mt-3 font-display text-5xl font-bold leading-tight md:text-7xl">迪迪的世界<br><span class="text-apricot">DIDI's World</span></h1><p class="mt-6 max-w-lg text-lg leading-8 text-latte">這裡收藏我的散步、零食、打盹，還有每一個被好好愛著的日常。</p><a href="#about" class="mt-8 inline-block rounded-full bg-cocoa px-6 py-3 font-bold text-cream shadow-lg transition hover:-translate-y-1">認識迪迪</a></div><figure class="polaroid mx-auto w-full max-w-md rounded-3xl" style="--rotate:3deg"><img class="aspect-square w-full rounded-2xl object-cover" src="https://placedog.net/720/720?id=17" alt="可愛的狗狗"><figcaption class="pt-4 text-center font-display text-2xl font-semibold text-latte">今天也要快樂搖尾巴！</figcaption></figure></div></section>
+    <section id="about" class="bg-white/70 px-5 py-16"><div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2"><img class="mx-auto aspect-[4/3] w-full max-w-lg rounded-[2rem] object-cover shadow-xl" src="https://placedog.net/760/570?id=46" alt="狗狗坐在草地上"><div><div class="paw-trail text-2xl">&#128062; &#128062; &#128062;</div><h2 class="mt-5 font-display text-4xl font-bold">嗨，我是迪迪！</h2><p class="mt-5 leading-8 text-latte">我是一隻喜歡聞風、追著光影跑，也很懂得享受午睡的狗狗。最喜歡的事情，是和我最愛的人一起把平凡的一天過得很有趣。</p><p class="mt-4 leading-8 text-latte">如果你也喜歡狗狗、喜歡慢慢生活，歡迎留在這裡陪我玩一下。</p></div></div></section>
+    <section id="gallery" class="px-5 py-16"><div class="mx-auto max-w-6xl"><p class="font-display text-lg font-semibold text-apricot">MY LITTLE DAYS</p><h2 class="mt-2 font-display text-4xl font-bold">生活相簿</h2><div class="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"><figure class="polaroid rounded-3xl" style="--rotate:-2deg"><img class="aspect-square w-full rounded-2xl object-cover" src="https://placedog.net/560/560?id=29" alt="狗狗照片一"><figcaption class="pt-3 text-center font-bold text-latte">出門散步的好心情</figcaption></figure><figure class="polaroid rounded-3xl" style="--rotate:2deg"><img class="aspect-square w-full rounded-2xl object-cover" src="https://placedog.net/560/560?id=35" alt="狗狗照片二"><figcaption class="pt-3 text-center font-bold text-latte">零食時間最認真</figcaption></figure><figure class="polaroid rounded-3xl" style="--rotate:-1deg"><img class="aspect-square w-full rounded-2xl object-cover" src="https://placedog.net/560/560?id=12" alt="狗狗照片三"><figcaption class="pt-3 text-center font-bold text-latte">曬太陽，充電中</figcaption></figure></div></div></section>
+    <section id="facts" class="bg-meadow/40 px-5 py-16"><div class="mx-auto max-w-6xl"><p class="font-display text-lg font-semibold text-latte">TAP TO FLIP</p><h2 class="mt-2 font-display text-4xl font-bold">迪迪小檔案</h2><div class="mt-9 grid gap-6 md:grid-cols-3"><article class="flip-card"><div class="flip-card-inner"><div class="flip-face flex flex-col items-center justify-center rounded-3xl bg-white p-8 text-center shadow-lg"><span class="text-5xl">&#127849;</span><h3 class="mt-4 font-display text-2xl font-bold">最愛零食</h3><p class="mt-2 text-latte">點一下翻過來</p></div><div class="flip-face flip-back flex items-center justify-center rounded-3xl bg-apricot p-8 text-center"><p class="text-xl font-bold text-cocoa">香香的小餅乾，永遠有第二個胃！</p></div></div></article><article class="flip-card"><div class="flip-card-inner"><div class="flip-face flex flex-col items-center justify-center rounded-3xl bg-white p-8 text-center shadow-lg"><span class="text-5xl">&#127807;</span><h3 class="mt-4 font-display text-2xl font-bold">最愛地點</h3><p class="mt-2 text-latte">點一下翻過來</p></div><div class="flip-face flip-back flex items-center justify-center rounded-3xl bg-paw p-8 text-center"><p class="text-xl font-bold text-cocoa">有草、有風、可以慢慢聞的公園。</p></div></div></article><article class="flip-card"><div class="flip-card-inner"><div class="flip-face flex flex-col items-center justify-center rounded-3xl bg-white p-8 text-center shadow-lg"><span class="text-5xl">&#128164;</span><h3 class="mt-4 font-display text-2xl font-bold">拿手絕活</h3><p class="mt-2 text-latte">點一下翻過來</p></div><div class="flip-face flip-back flex items-center justify-center rounded-3xl bg-blush p-8 text-center"><p class="text-xl font-bold text-cocoa">三秒入睡，還會在夢裡跑步。</p></div></div></article></div></div></section>
+    <section id="guestbook" class="px-5 py-16"><div class="mx-auto max-w-3xl rounded-[2rem] bg-white p-7 shadow-xl md:p-10"><p class="font-display text-lg font-semibold text-apricot">LEAVE A PAW PRINT</p><h2 class="mt-2 font-display text-4xl font-bold">留言給迪迪</h2><form id="guestbookForm" class="mt-7 grid gap-4"><input id="guestName" class="rounded-2xl border border-paw px-4 py-3 outline-none focus:border-apricot" maxlength="30" placeholder="你的名字" required><textarea id="guestMessage" class="min-h-28 rounded-2xl border border-paw px-4 py-3 outline-none focus:border-apricot" maxlength="160" placeholder="想對迪迪說什麼？" required></textarea><button class="justify-self-start rounded-full bg-apricot px-6 py-3 font-bold text-cocoa transition hover:-translate-y-1" type="submit">留下小爪印</button></form><div id="guestbookList" class="mt-8 grid gap-4"></div></div></section>
+  </main>
+  <footer class="bg-cocoa px-5 py-8 text-center text-cream"><p class="font-display text-xl font-semibold">DIDI's World</p><p class="mt-2 text-sm text-paw">Made with wagging tails and warm naps.</p></footer>
+  <script>
+    const menuButton=document.getElementById("menuButton"),mobileMenu=document.getElementById("mobileMenu"); menuButton.addEventListener("click",()=>mobileMenu.classList.toggle("hidden")); document.querySelectorAll(".flip-card").forEach(card=>card.addEventListener("click",()=>card.classList.toggle("is-flipped")));
+    const form=document.getElementById("guestbookForm"),list=document.getElementById("guestbookList"),storageKey="didi-guestbook";
+    const escapeHtml=value=>value.replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"})[char]);
+    const render=()=>{const notes=JSON.parse(localStorage.getItem(storageKey)||"[]");list.innerHTML=notes.map(note=>`<article class="guest-note rounded-2xl bg-cream p-4"><p class="font-bold text-latte">${escapeHtml(note.name)}</p><p class="mt-1 leading-7">${escapeHtml(note.message)}</p></article>`).join("")||`<p class="rounded-2xl bg-cream p-4 text-latte">第一個小爪印，等你留下。</p>`;};
+    form.addEventListener("submit",event=>{event.preventDefault();const name=document.getElementById("guestName").value.trim(),message=document.getElementById("guestMessage").value.trim();if(!name||!message)return;const notes=JSON.parse(localStorage.getItem(storageKey)||"[]");notes.unshift({name,message});localStorage.setItem(storageKey,JSON.stringify(notes.slice(0,20)));form.reset();render();});render();
+  </script>
+  <section id="contact" class="bg-cream px-5 pb-14"><div class="mx-auto max-w-3xl rounded-[2rem] border border-paw bg-white p-7 text-center shadow-lg md:p-10"><p class="font-display text-sm font-semibold tracking-widest text-apricot">LET'S TALK</p><h2 class="mt-2 font-display text-3xl font-bold text-cocoa">想問迪迪的事嗎？</h2><p class="mx-auto mt-3 max-w-lg leading-7 text-latte">有任何問題、想分享迪迪的可愛瞬間，歡迎直接聯絡我們。</p><div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row"><a href="mailto:one2free88@gmail.com" class="rounded-full bg-cocoa px-6 py-3 font-bold text-cream transition hover:-translate-y-1">Email 聯絡我們</a><a href="https://wa.me/886955383721?text=Hi%20DIDI%27s%20World%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="rounded-full bg-[#25D366] px-6 py-3 font-bold text-white transition hover:-translate-y-1">WhatsApp 詢問</a></div><p class="mt-4 text-sm text-latte">WhatsApp: +886 955 383 721</p></div></section>
+  <script>
+    google.script.run.withSuccessHandler(function(data) {
+      document.title = data.siteTitle || document.title;
+      function replaceText(oldText, newText) {
+        if (!newText) return;
+        document.querySelectorAll('h1,h2,h3,p,figcaption').forEach(function(el) {
+          if (el.children.length === 0 && el.textContent.trim() === oldText) el.textContent = newText;
+        });
+      }
+      replaceText('迪迪的世界', data.heroTitle);
+      replaceText('認識迪迪', data.aboutTitle);
+      replaceText('想問迪迪的事嗎？', data.contactTitle);
+      replaceText('有任何問題、想分享迪迪的可愛瞬間，歡迎直接聯絡我們。', data.contactText);
+      replaceText("DIDI's World", data.siteTitle);
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) { a.href = 'mailto:' + data.email; });
+      document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a) { a.href = 'https://wa.me/886' + data.whatsapp.replace(/^0/, ''); });
+      var images = {
+        'https://placedog.net/720/720?id=17': data.heroImage,
+        'https://placedog.net/760/570?id=46': data.aboutImage,
+        'https://placedog.net/560/560?id=29': data.galleryImage1,
+        'https://placedog.net/560/560?id=35': data.galleryImage2,
+        'https://placedog.net/560/560?id=12': data.galleryImage3
+      };
+      document.querySelectorAll('img').forEach(function(img) { if (images[img.src]) img.src = images[img.src]; });
+    }).getPublicSiteContent();
+  </script>
+  <script>
+    document.addEventListener('click', function(event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      event.preventDefault();
+      event.stopPropagation();
+      var target = document.getElementById(link.getAttribute('href').slice(1));
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+    }, true);
+  </script>
+</body>
+</html>
